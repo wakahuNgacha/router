@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "apps.routs",
     "apps.users",
     "apps.trucks",
-    "apps.diarlyLogs",
+    "apps.dailyLogs",
     "apps.companies",
     "apps.core",
 

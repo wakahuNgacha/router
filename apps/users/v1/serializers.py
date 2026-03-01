@@ -52,3 +52,8 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         return user
   
+class DriverSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Driver
+        fields = '__all__'
+        
