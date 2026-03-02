@@ -6,10 +6,11 @@ from apps.companies.v1.models import Company
 class User(AbstractUser):
 
     ROLE_CHOICES = (
-        ('Admin', 'admin'),
-        ('Driver', 'driver'),
-        ('Manager', 'manager'),
+        ('admin', 'Admin'),
+        ('driver', 'Driver'),
+        ('manager', 'Manager'),
     )
+    
     email = models.EmailField(unique=True)
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='driver')
 
