@@ -1,13 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class Rout(models.Model):
+class Route(models.Model):
     origin_lat = models.FloatField()
     origin_lng = models.FloatField()
 
     destination_lat = models.FloatField()
     destination_lng = models.FloatField()
-    routes = models.JSONField()
+    routees = models.JSONField(null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 

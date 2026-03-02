@@ -1,7 +1,7 @@
 """
 URL configuration for config project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The `urlpatterns` list routees URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
 Examples:
 Function views
@@ -23,6 +23,6 @@ urlpatterns = [
     path("api/v1/", include("apps.users.v1.urls")),
     path("api/v1/", include("apps.companies.v1.urls")),
     path("api/v1/", include("apps.trucks.v1.urls")),
-    path("api/v1/", include("apps.routs.v1.urls")),
+    path("api/v1/", include("apps.routes.v1.urls")),
     path("api/v1/", include("apps.dailyLogs.v1.urls")),
 ]

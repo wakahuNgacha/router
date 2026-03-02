@@ -1,6 +1,6 @@
 from django.db import models
 from apps.trucks.v1.models import Truck
-from apps.routs.v1.models import Rout
+from apps.routes.v1.models import Route
 from apps.users.v1.models import Driver
 
 # Create your models here.
@@ -8,7 +8,7 @@ class DailyLog(models.Model):
     date = models.DateField()    
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE, related_name='daily_logs')
     truck = models.ForeignKey(Truck, on_delete=models.CASCADE, related_name='daily_logs')
-    rout = models.ForeignKey(Rout, on_delete=models.CASCADE, related_name='daily_logs')
+    route = models.ForeignKey(Route, on_delete=models.CASCADE, related_name='daily_logs')
     total_driving_milage = models.FloatField(help_text="Total mileage driven in miles")
 
     notes = models.TextField(blank=True)

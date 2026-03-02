@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from apps.routs.v1.models import Rout
-from apps.routs.v1.serializers import RoutSerializer
+from apps.routes.v1.models import Route
+from apps.routes.v1.serializers import RouteSerializer
 from apps.trucks.v1.models import Truck
 from apps.trucks.v1.serializers import TruckSerializer
 from apps.users.v1.models import Driver
@@ -15,7 +15,7 @@ class DailyLogSerializer(serializers.ModelSerializer):
 class DailyLogListViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = DailyLog
-        fields = ['id', 'truck', 'rout', 'date']
+        fields = ['id', 'truck', 'route', 'date']
 
 class DailyLogCreateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,7 +34,7 @@ class DailyLogDeleteSerializer(serializers.ModelSerializer):
 
 class DailyLogDetailSerializer(serializers.ModelSerializer):
     truck = TruckSerializer()
-    rout = RoutSerializer()
+    route = RouteSerializer()
     driver = DriverSerializer()
 
     class Meta:
