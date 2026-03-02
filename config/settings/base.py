@@ -9,8 +9,15 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+load_dotenv(BASE_DIR / ".env")
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -20,11 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-4d)p#d26a*@!$c$*r-9l9=4&b4wsyiql$456%p+216+v1n1u6#"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 ALLOWED_HOSTS = []
 
+
+OPENROUTSERVICE_TOKEN = os.environ.get("OPENROUTSERVICE_TOKEN")
+OPENROUTSERVICE_URL = os.environ.get("OPENROUTSERVICE_URL")
 
 # Application definition
 

@@ -1,3 +1,4 @@
 .env
 db.sqlite3
 venv/
+fuel-prices-for-be-assessment.csv
