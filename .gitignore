@@ -3,3 +3,4 @@ db.sqlite3
 venv/
 fuel-prices-for-be-assessment.csv
 __pycache__/
+geocoded_fuel_prices.csv

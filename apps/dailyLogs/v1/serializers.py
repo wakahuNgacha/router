@@ -43,47 +43,47 @@ class DailyLogDetailSerializer(serializers.ModelSerializer):
 
 class OffDutySerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = OffDuty
         fields = '__all__'
 
 class OffDutyCreateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = OffDuty
         fields = '__all__'
 
 class OffDutyUpdateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = OffDuty
         fields = '__all__'
 
 class OffDutyDeleteSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = OffDuty
         fields = '__all__'
 
 class SleeperBerthSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = SleeperBerth
         fields = '__all__'
 
 class SleeperBerthCreateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = SleeperBerth
         fields = '__all__'
 
 class SleeperBerthUpdateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = SleeperBerth
         fields = '__all__'
 
 class SleeperBerthDeleteSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = SleeperBerth
         fields = '__all__'
 
 class DrivingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DailyLog
+        model = Driving
         fields = '__all__'
 
 class DrivingCreateSerializer(serializers.ModelSerializer):
