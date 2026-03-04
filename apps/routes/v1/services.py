@@ -52,17 +52,10 @@ class GetFuelingStations:
     SEARCH_RADIUS_MILES = 10
 
     def __init__(self, route_response):
-        """
-        route_response = full JSON response from OpenRouteService
-        """
         self.route_response = route_response
         self.csv_path = settings.FUEL_STATIONS_CSV_PATH
 
     def get_500_mile_coordinate(self):
-        """
-        Walk through route geometry and return coordinate
-        near 500 miles from origin.
-        """
         coords = self.route_response["features"][0]["geometry"]["coordinates"]
 
         target_meters = self.TARGET_MILES * 1609.34
