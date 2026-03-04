@@ -11,7 +11,7 @@ class RouteSerializer(serializers.ModelSerializer):
 class RouteListViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Route
-        fields = ['id', 'name']
+        fields = '__all__'
 
 class RouteCreateSerializer(serializers.ModelSerializer):
     routee_data = serializers.SerializerMethodField()  # Optional: include full API response
@@ -34,7 +34,15 @@ class RouteCreateSerializer(serializers.ModelSerializer):
             dest_lng=instance.destination_lng,
         )
         
-        instance.routees = routee_response.get("routees", [])
+        instance.routees = routee_response.get("features", [])
+
+        fueling_service = GetFuelingStations(routee_response)
+        fueling_stations = fueling_service.get_fueling_stations()
+        fuel_cost = fueling_service.get_fuel_price(fueling_stations)
+
+        instance.fueling_station = fueling_stations
+        instance.fuel_cost = fuel_cost
+
         instance.save()
 
         return instance

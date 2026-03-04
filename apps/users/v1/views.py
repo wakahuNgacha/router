@@ -10,3 +10,7 @@ class UserCreateView(CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save()
+
+class DriverListView(ListAPIView):
+    serializer_class = DriverSerializer
+    queryset = Driver.objects.all()

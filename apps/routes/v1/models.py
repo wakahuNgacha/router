@@ -8,8 +8,10 @@ class Route(models.Model):
     destination_lat = models.FloatField()
     destination_lng = models.FloatField()
     routees = models.JSONField(null=True, blank=True)
+    fueling_station = models.JSONField(null=True, blank=True)
+    fuel_cost = models.FloatField(null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.origin_address} to {self.destination_address}"
+        return f"{self.origin_lat, self.origin_lng} to {self.destination_lat, self.destination_lng}"

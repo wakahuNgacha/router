@@ -1,2 +1,19 @@
--r base.txt
+asgiref==3.11.1
+certifi==2026.2.25
+charset-normalizer==3.4.4
+coverage==7.13.4
+Django==6.0.2
+django-filter==25.2
+djangorestframework==3.16.1
+djangorestframework_simplejwt==5.5.1
+dotenv==0.9.9
 Faker==40.5.1
+idna==3.11
+Markdown==3.10.2
+PyJWT==2.11.0
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+requests==2.32.5
+six==1.17.0
+sqlparse==0.5.5
+urllib3==2.6.3

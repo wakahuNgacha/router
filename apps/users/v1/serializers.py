@@ -40,14 +40,14 @@ class RegisterSerializer(serializers.ModelSerializer):
         # Create user including username
         user = User.objects.create_user(
             email=validated_data["email"],
-            username=validated_data["username"],  # <--- pass username here
+            username=validated_data["username"],
             password=validated_data["password"],
             role=role
         )
 
-        if role == "Driver":
+        if role == "driver":
             Driver.objects.create(user=user, license_number=license_number)
-        elif role == "Manager":
+        elif role == "manager":
             Manager.objects.create(user=user, employee_id=employee_id)
 
         return user

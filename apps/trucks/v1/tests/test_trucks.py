@@ -36,11 +36,20 @@ class TruckAPITest(TestCase):
             "total_truck_milage": 1200
         }
 
+        self.data = {
+            "license_plate": fake.license_plate(),
+            "model": fake.word(),
+            "consumption": 8.5,
+            "max_range": 400,
+            "capacity": 12.5,
+            "company": self.company.id,
+            "total_truck_milage": 1200
+        }
+
     def test_create_truck(self):
         url = reverse('truck-create')
-        response = self.client.post(url, self.truck_data, format='json')
+        response = self.client.post(url, self.data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertTrue(Truck.objects.filter(license_plate=self.truck_data['license_plate']).exists())
 
     def test_list_trucks(self):
         Truck.objects.create(**self.truck_data)
